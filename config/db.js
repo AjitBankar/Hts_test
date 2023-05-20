@@ -8,7 +8,7 @@ exports.initDb = async () => {
       return;
     }
     try {
-      const db = await mongoose.connect('mongodb://localhost:27017/hts' || process.env.DB_URL, {useNewUrlParser: true
+      const db = await mongoose.connect('mongodb+srv://AjitBankar:LMQG6a9dzZPvLyb7@cluster0.ikui9vf.mongodb.net/hts_test?retryWrites=true&w=majority' || process.env.DB_URL, {useNewUrlParser: true
   
       }).then(() => console.log('Database connected!'));
       return;
