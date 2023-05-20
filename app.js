@@ -13,8 +13,9 @@ app.use(bodyParser.urlencoded({
  
 }));
 
-
-
+app.get("/", (req,res)=>{
+  res.send("Welcome");
+})
 
 app.post("/signup", async(req, res) => {
      const userData = await  this.userModel.findOne({email:req.body.email}).lean();
