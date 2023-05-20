@@ -17,7 +17,7 @@ app.get("/", (req,res)=>{
   res.send("Welcome");
 })
 
-app.post("/signup", async(req, res) => {
+app.post("/api/user/signup", async(req, res) => {
      const userData = await  this.userModel.findOne({email:req.body.email}).lean();
      
      if(!userData){
@@ -35,7 +35,7 @@ app.post("/signup", async(req, res) => {
      }
   });
 
-  app.post("/login", async(req, res) => {
+  app.post("/api/user/login", async(req, res) => {
     const { email, password } = req.body;
     const userData = await  this.userModel.findOne({email, password}).lean();
     
